@@ -49,9 +49,7 @@ function desencriptar() {
 function mostrarResultado(texto) {
     // Ocultar el contenedor de placeholder
     document.getElementById('salida-placeholder').style.display = 'none';
-    // Mostrar el contenedor de resultado
     document.getElementById('resultado').style.display = 'block';
-    // Colocar el texto en el contenedor de resultado
     document.getElementById('texto-resultado').textContent = texto;
 }
 
@@ -60,8 +58,8 @@ function copiarAlPortapapeles() {
     let textoResultado = document.getElementById('texto-resultado');
     let rango = document.createRange();
     rango.selectNode(textoResultado);
-    window.getSelection().removeAllRanges(); // Quita cualquier selección anterior
-    window.getSelection().addRange(rango); // Selecciona el contenido del nodo
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(rango); 
     document.execCommand('copy');
     window.getSelection().removeAllRanges(); // Limpia la selección después de copiar
     alert('Texto copiado al portapapeles');
@@ -80,10 +78,8 @@ function verificarCampo() {
     let botonDesencriptar = document.getElementById('boton-desencriptar');
     
     if (textoEntrada.trim() === '') {
-        // Mostrar el contenedor de placeholder
-        document.getElementById('salida-placeholder').style.display = 'block';
-        // Ocultar el contenedor de resultado
-        document.getElementById('resultado').style.display = 'none';
+       document.getElementById('salida-placeholder').style.display = 'block';
+       document.getElementById('resultado').style.display = 'none';
         // Deshabilitar botones de encriptar y desencriptar
         botonEncriptar.disabled = true;
         botonDesencriptar.disabled = true;
